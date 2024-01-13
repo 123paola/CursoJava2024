@@ -36,7 +36,7 @@ public class Ejercicio4 {
             if (i % 2 == 1) {
                 System.out.println("Numero Impar:" + i);
                 aux++;
-                sum3 = sum3 + i;
+                sum3+= i;
             }
 
 

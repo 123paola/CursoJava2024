@@ -16,7 +16,7 @@ public class Ejercicio8 {
         int edad = sc.nextInt();
 
         if(Objects.equals(sexo,"Femenino") || Objects.equals(sexo,"femenino")){
-if(edad<6){
+if(edad>0 && edad<6){
     System.out.println("Felicidades le corresponde un coche");
 
 } else if (edad>=6 && edad<=9) {
@@ -26,7 +26,7 @@ if(edad<6){
 }
         }
         if(Objects.equals(sexo,"Masculino") || Objects.equals(sexo,"masculino")){
-            if(edad<5){
+            if(edad>0 && edad<5){
                 System.out.println("Felicidades le corresponde un carro");
 
             } else if (edad>=5 && edad<=8) {
