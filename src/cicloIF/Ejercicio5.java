@@ -14,42 +14,46 @@ import java.util.Scanner;
 
 public class Ejercicio5 {
     public static void main(String args[]) {
-double total;
-        Scanner sc= new Scanner(System.in);
+
+        Scanner sc = new Scanner(System.in);
         System.out.println("Por favor ingrese la lectura actual del gas");
-        int Lac=sc.nextInt();
-        int Lac2=Lac;
+        int Lac = sc.nextInt();
         System.out.println("Por favor ingrese la lectura anterior del gas");
-        int Lan=sc.nextInt();
-        if (Lac <= 70) {
-        total=500;
-        }else{
-            total=500;
-            Lac = Lac-70;
-        }if(Lac<100){
-            total=Lac*50+total;
-        }else{
-            Lac = Lac - 100;
-            total = 500+100*50;
-        }if(Lac<230){
-            total=Lac*25;
-          }else{
-            Lac = Lac - 230;
-           total=Lac*15+total+(25*230);
+        int Lan = sc.nextInt();
+        double total = 0;
+        double descuento = 0;
+
+        if (Lan < 0 || Lac<0) {
+            System.out.println("error");
         }
-        if(Lac2<Lan) {
-          if(Lac2<70 || Lac2>170) {
-                total = total * 0.8;
-            }
-          if(Lac2>170 && Lac2<400){
-              if(Lan*0.50==Lac){
-                  total=total*0.5;
-              }
+        if (Lac >= 0 && Lac <= 70) {
+            total = 500;
         }
+        if (Lac > 70 && Lac <= 100) {
+            total = 250 * Lac;
         }
-        System.out.println("El valor a pagar es:  " + total);
+        if (Lac > 100 && Lac <= 230) {
+            total = 125 * Lac;
+        }
+        if (Lac >= 400) {
+            total = 55 * Lac;
+        }
+        System.out.println("el valor total es: " + total);
+
+        if (Lac < Lan) {
+            descuento = total * (total - 0.2);
+            System.out.println("Tiene un descuento del 20% y el valor total es: " + descuento);
+
+        } else if (Lan * 0.5 < Lac) {
+            descuento = total * (total - 0.5);
+            System.out.println("Tiene un descuento del 50% y el valor total es: " + descuento);
+
+
+        }
+
     }
 
 }
+
 
 

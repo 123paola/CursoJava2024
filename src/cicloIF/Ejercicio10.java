@@ -31,7 +31,7 @@ public class Ejercicio10 {
         }
         if (menu == 2) {
 
-            double pi = 3.1416;
+            final double pi = 3.1416;
 
             System.out.println("Por favor ingrese el radio");
             double radio = sc.nextInt();
